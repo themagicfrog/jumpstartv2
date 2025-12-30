@@ -39,6 +39,11 @@ header h1:hover {
   text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 60px rgba(255, 255, 255, 0.8), 0 0 90px rgba(255, 255, 255, 0.6);
 }
 
+.consoles-title:hover {
+  animation: flicker 0.5s ease-in-out infinite;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 60px rgba(255, 255, 255, 0.8), 0 0 90px rgba(255, 255, 255, 0.6);
+}
+
 @keyframes flicker {
   0%, 100% {
     text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 60px rgba(255, 255, 255, 0.8), 0 0 90px rgba(255, 255, 255, 0.6);
@@ -1541,6 +1546,43 @@ details[open] > summary {
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+.console-scroll-container {
+  width: 100%;
+  overflow: hidden;
+  background: rgba(135, 206, 235, 0.1);
+  border-top: 2px solid rgba(135, 206, 235, 0.3);
+  border-bottom: 2px solid rgba(135, 206, 235, 0.3);
+  margin: 2em 0;
+  padding: 1em 0;
+}
+
+.console-scroll {
+  display: flex;
+  animation: scroll-consoles 40s linear infinite;
+  width: max-content;
+}
+
+.console-scroll img {
+  height: 300px;
+  width: auto;
+  margin: 0 0.3em;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.console-scroll img:hover {
+  transform: scale(1.1);
+}
+
+@keyframes scroll-consoles {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 
